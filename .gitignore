@@ -8,3 +8,7 @@ dist/
 build/
 *.egg-info/
 
+# ignore two folders at repo root
+/probe_adv_Notes/
+/probe_adv_Papers/
+
