@@ -72,6 +72,7 @@
 % Bracket notations
 \newcommand{\comm}[2]{\left[#1,#2\right]}
 \newcommand{\acomm}[2]{\left\{#1,#2\right\}}
+\newcommand{\expect}[1]{\langle #1 \rangle}
 
 % ----------------------------------------------------------------------
 \begin{document}
@@ -94,7 +95,7 @@ Our results demonstrate that quantum probes do not merely enhance measurement se
 
 % ======================================================================
 \section[1]{Introduction}
-\WD{this part is hard to write: not sure how the story is motivated... to be discussed}
+\WD{Introduction is hard to write: not sure how the story is motivated... to be discussed}
 
 Response theory has long provided a unifying framework for understanding how quantum systems react to external perturbations. In its standard formulation, a system is perturbed by a classical control field and observables of the same system are measured. Linear and nonlinear response functions obtained in this way encode transport coefficients, susceptibilities, and spectral properties.
 
@@ -108,61 +109,63 @@ The central result is that the distinction is not merely technological but algeb
 
 % ======================================================================
 
-\section[2]{Correlators and Operator Orderings}
+\section[2]{Correlation Fucntions and Operator Orderings}
 Response theory is widely used in many-body systems to study crucial physial properties. This is achieved by applying perturbations directly to the system, and measuring operator response thereof.
+[\AGENT{start when it is denoted by $M$?}]
 Notice that the perturbative Hamiltonians can be thought of using a trivial, or \textit{classical}, probe on the target system. 
 \WD{One can assume a probe which after being trace out, left the many-body system-only dynamics gauge-fixed unitary as described in response theory; 
-then we can prove that the state of probe is trivially identity. }
+then we can prove that the state of probe is trivially identity. } 
 
-While, the quantum probe is disparate as the probe's degree of freedom is non-trivial --- the probe's state evoles with the target and the internal entanglement among an ensemble of probes changes.    
+On the other hand, introducing a quantum probe, whose dimension is substantially smaller than the target, will let the reduced dynamics, on target system or probe, non-unitary due to the entanglement between 
+them. Notice that the quantum probe is disparate also as the probe's degree of freedom is non-trivial --- the probe's state evoles with the target and the internal entanglement among an ensemble of probes changes. 
+The information of the target system will be flown to the probe side and is read out on the probe.    
 
-In this section, we illustrate the different algebraic structures in system-based learning and in probe-based learnng, where in the former case, general non-linear respons theory reconstructs nested commutators, and in the latter case, probe-based spectroscopic scheme reconstructs nested anticommutator and commutators altogether.  
+In this section, we illustrate the different algebraic structures in system-based learning and in probe-based learnng (\WD{learning is inapppropriate ?}), where in the former case, general non-linear respons theory reconstructs nested commutators, and in the latter case, probe-based spectroscopic scheme reconstructs nested anticommutator and commutators altogether.  
 
-\subsection[2_a]{System-only probing: generalized response theory}
+\subsection[2_a]{System-based learning: generalized response theory}
 % This should be a secton introducing/reviewing the general response theory: start from perturbation to obtained the operator's response to the perturbation.
 % all the way -math derivations- to the nested commutators that is at the heart of non-linear response theory. 
 
+\AGENT{This part might be TOO hand-waving: linear response theory is textbook knowledge and is well-known. It is not a good idea to REVIE it in NatPhy. Might need to be more compact to go to GNLR directly. What do you think? }
+
 We briefly review the structure of quantum response theory, emphasizing that classical, system-only probing is fundamentally an estimation problem for causally ordered nested commutators. This algebraic restriction will later serve as a sharp point of contrast with probe-based measurement schemes.
 
-Consider a quantum system with Hamiltonian \(H_0\), subjected to a time-dependent perturbation
+Consider a quantum matter system $M$ with Hamiltonian \(H_0\), subjected to a time-dependent perturbation
 \begin{equation}
 H(t) = H_0 - \lambda(t)\, M_0(t) ,
 \end{equation}
-where \(\lambda(t)\) is a real-valued control field and \(M_0(t)\) is a (\WD{usually assumed to be Hermitian}) system operator. We work in the interaction picture with respect to \(H_0\), in which
+where \(\lambda(t)\) is a real-valued control field and \(M_0(t)\) is a Hermitian system operator. We work in the interaction picture with respect to \(H_0\) (let $\hbar\equiv1$), in which
 \begin{equation}
-M(t) = e^{\frac{i}{\hbar} H_0 t} M_0(t) e^{-\frac{i}{\hbar} H_0 t}.
+M(t) = e^{i H_0 t} M_0(t) e^{-i H_0 t}.
 \end{equation}
-
-The interaction-picture evolution operator is
+The interaction-picture evolution operator is 
 \begin{equation}
 U_I(T) = \mathcal{T}\exp\!\left(
-\frac{i}{\hbar}\int_{0}^{T} dt\, \lambda(t)\, M_0(t)
+i\int_{0}^{T} dt\, \lambda(t)\, M(t)
 \right),
 \end{equation}
 where \(\mathcal{T}\) denotes time ordering. The expectation value of an observable \(A\) at the final time \(T\) is
 \begin{equation}
 \langle A(T) \rangle_\lambda
 = \mathrm{Tr}\!\left[
-U_I^\dagger(T)\, A(T)\, U_I(T)\, \rho
+U_I^\dagger(T)\, A(T)\, U_I(T)\, \rho_0
 \right],
 \end{equation}
-with \(\rho\) the initial system state prepared before the perturbation is applied.
-
+with \(\rho_0\) the initial system state prepared before the perturbation is applied.
 Expanding \(U_I(T)\) to first order in \(\lambda\),
 \begin{equation}
-U_I(T) \simeq 1 + \frac{i}{\hbar}\int_{0}^{T} dt_1\, \lambda(t_1) M(t_1),
+U_I(T) \simeq 1 + i\int_{0}^{T} dt_1\, \lambda(t_1) M(t_1),
 \end{equation}
 and retaining only linear terms, the induced change in the expectation value of \(A\) is
 \begin{equation}
 \delta \langle A(T) \rangle
-= \frac{i}{\hbar}\int_{0}^{T} dt_1\, \lambda(t_1)\,
+= i\int_{0}^{T} dt_1\, \lambda(t_1)\,
 \langle [A(T), M(t_1)] \rangle .
 \end{equation}
-
-This is the Kubo formula. The associated retarded susceptibility is
+This is the Kubo formula\cite{}. The associated retarded susceptibility is
 \begin{equation}
 \chi_{AM}^R(T,t_1)
-= \frac{i}{\hbar}\,\Theta(T-t_1)\,\langle [A(T), M(t_1)] \rangle,
+= i\,\Theta(T-t_1)\,\langle [A(T), M(t_1)] \rangle,
 \end{equation}
 which depends solely on a commutator and enforces causality explicitly.
 
@@ -170,7 +173,7 @@ which depends solely on a commutator and enforces causality explicitly.
 \textbf{General nonlinear response} Higher-order response functions follow directly from the Dyson expansion of \(U_I(T)\). At order \(k\), the contribution to the expectation value takes the universal form
 \begin{align}
 \delta^{(k)} \langle A(T) \rangle
-&= \left(\frac{i}{\hbar}\right)^k
+&= \left(i\right)^k
 \int_{0}^{T} dt_1
 \int_{0}^{t_1} dt_2
 \cdots
@@ -184,9 +187,9 @@ which depends solely on a commutator and enforces causality explicitly.
 \end{align}
 where the nested integrals impose the causal ordering
 \begin{equation}
-T \ge t_1 \ge t_2 \ge \cdots \ge t_k .
+T \ge t_1 \ge t_2 \ge \cdots \ge t_k ;
 \end{equation}
-\AGENT{the time lower bound is better set to 0. }
+and $\expect{\bullet}\equiv = \Tr[\bullet \rho]$.
 
 \textbf{Algebraic structure and interpretation} The key structural result is that \emph{all} orders of classical response theory are built exclusively from causally ordered nested commutators. No anti-commutators or symmetrized correlators appear at any stage of the expansion. 
 This restriction follows directly from two assumptions:
@@ -199,8 +202,10 @@ From this perspective, response theory may be viewed as an estimation framework 
 [\![\![ A(T), M(t_1) ], M(t_2) ], \ldots , M(t_k)]
 \big\rangle.
 \end{equation}
-These objects encode causal susceptibility and transport properties, but they do not contain independent information about fluctuations, symmetrized noise, or mixed operator orderings. Accessing such additional sectors requires going beyond system-only response theory, as we will demonstrate using quantum probes.
+To claim and to be explained: These objects encode causal susceptibility and transport properties, but they do not contain independent information about fluctuations, symmetrized noise, or mixed operator orderings. 
+Accessing such additional sectors requires going beyond system-only response theory, as we will demonstrate using quantum probes.
 
+\WD{Not only we need to add refs on GNR / LR theory in conventional many-body physics, we should also illustrate if NEW tools -e.g., classical shadow- essentially described by respons theory. Absence of such might weaken our impact. }
 
 \subsection[2_b]{Quantum probe: open quantum system-based learning and algebraic structure}
 % This should be a secton introducing/reviewing the QNS-based learning theory: start from probe-Matter coupling to obtained the probe's response to the perturbation.
