@@ -83,19 +83,18 @@
 \affiliation{Queen Mary University of London}
 
 \begin{abstract}
-A fundamental question in quantum physics is whether the physical properties of a quantum system can be fully characterized by perturbing and measuring the system alone, or whether introducing an auxiliary quantum degree of freedom---a probe---is essential to access certain classes of information. 
-Traditional response theory, both linear and nonlinear, treats the probe as classical and characterizes the system through causal susceptibilities expressed as nested commutators. By contrast, modern probe-based approaches couple a controllable quantum system to the target and infer properties of the target from the probe's reduced dynamics.
-In this work we provide a rigorous operator-level analysis of the distinction between these two paradigms. 
-We show that system-only response theory is structurally restricted to commutator (retarded) correlators, encoding causal response, whereas probe-based measurements generically access anti-commutator and mixed operator orderings that encode fluctuations, noise, occupations, decoherence, and irreversibility. 
-We present a complete second-order derivation for a standard dephasing spectroscopy protocol, demonstrating explicitly that probe coherence decay is governed by the symmetrized (anti-commutator) correlator, while the probe phase shift is governed by the commutator correlator with a causal kernel. 
-We then generalize the analysis to arbitrary order using a contour-ordered formulation, introducing a basis of nested commutator/anti-commutator ``braketor'' correlators and showing which subsets are accessible to classical response versus quantum probes. Finally, we discuss energy-exchange probes that directly access unsymmetrized correlators and population information. 
-Our results clarify, in a mathematically precise way, why auxiliary quantum degrees of freedom make fluctuation-related properties operationally measurable.
+Understanding which physical properties of a quantum many-body system are operationally accessible is a foundational question underlying spectroscopy, thermodynamics, and quantum information science.
+Conventional response theory, a cornerstone of many-body physics, perturbs and measures the system itself, yielding susceptibilities constructed exclusively from causally ordered nested commutators.
+Here we establish, at the operator level and from first principles, that when an auxiliary quantum probe is coherently coupled to a target system and subsequently measured, its reduced dynamics encodes a strictly larger class of information about the system. 
+Owing to probe--system entanglement and the resulting non-Markovian backaction, probe observables access multi-time anti-commutator correlators and mixed operator orderings that characterize fluctuations, non-equilibriant behavior, and irreversibility---quantities that are not, in general, determined by response functions alone. We present explicit examples showing how small, controllable quantum probes can efficiently reconstruct physical properties of many-body systems that are otherwise inaccessible or operationally impractical using system-only measurements. 
+Our results demonstrate that quantum probes do not merely enhance measurement sensitivity within a closed-system framework, but fundamentally enlarge the algebra of operationally measurable observables, thereby establishing a precise and general notion of quantum probe advantage in many-body physics.
 \end{abstract}
 
 \maketitle
 
 % ======================================================================
 \section[1]{Introduction}
+\WD{this part is hard to write: not sure how the story is motivated... to be discussed}
 
 Response theory has long provided a unifying framework for understanding how quantum systems react to external perturbations. In its standard formulation, a system is perturbed by a classical control field and observables of the same system are measured. Linear and nonlinear response functions obtained in this way encode transport coefficients, susceptibilities, and spectral properties.
 
@@ -180,7 +179,7 @@ which depends solely on a commutator and enforces causality explicitly.
 \nonumber\\
 &\quad\times
 \big\langle
-[\codts[ A(T), M(t_1) ], M(t_2) ], \ldots , M(t_k)]
+[\cdots[ A(T), M(t_1) ], M(t_2) ], \ldots , M(t_k)]
 \big\rangle ,
 \end{align}
 where the nested integrals impose the causal ordering
