@@ -24,6 +24,7 @@
 \usepackage{mathtools}
 \usepackage{bm}
 \usepackage{braket}
+\usepackage{multirow}
 
 % ----------------------------
 % Figures / color / hyperlinks
@@ -148,10 +149,10 @@ where \(\mathcal{T}\) denotes time ordering. The expectation value of an observa
 \begin{equation}
 \langle A(T) \rangle_\lambda
 = \mathrm{Tr}\!\left[
-U_I^\dagger(T)\, A(T)\, U_I(T)\, \rho_0
+U_I^\dagger(T)\, A(T)\, U_I(T)\, \rho_M
 \right],
 \end{equation}
-with \(\rho_0\) the initial system state prepared before the perturbation is applied.
+with \(\rho_M\) the initial state of $M$ prepared before the perturbation is applied.
 Expanding \(U_I(T)\) to first order in \(\lambda\),
 \begin{equation}
 U_I(T) \simeq 1 + i\int_{0}^{T} dt_1\, \lambda(t_1) M(t_1),
@@ -189,7 +190,7 @@ where the nested integrals impose the causal ordering
 \begin{equation}
 T \ge t_1 \ge t_2 \ge \cdots \ge t_k ;
 \end{equation}
-and $\expect{\bullet}\equiv = \Tr[\bullet \rho]$.
+and $\expect{\bullet}\equiv = \Tr[\bullet \rho_M]$.
 
 \textbf{Algebraic structure and interpretation} The key structural result is that \emph{all} orders of classical response theory are built exclusively from causally ordered nested commutators. No anti-commutators or symmetrized correlators appear at any stage of the expansion. 
 This restriction follows directly from two assumptions:
@@ -201,52 +202,56 @@ From this perspective, response theory may be viewed as an estimation framework 
 \big\langle
 [\![\![ A(T), M(t_1) ], M(t_2) ], \ldots , M(t_k)]
 \big\rangle.
+\label{eq:response_correlator}
 \end{equation}
 To claim and to be explained: These objects encode causal susceptibility and transport properties, but they do not contain independent information about fluctuations, symmetrized noise, or mixed operator orderings. 
 Accessing such additional sectors requires going beyond system-only response theory, as we will demonstrate using quantum probes.
 
-\WD{Not only we need to add refs on GNR / LR theory in conventional many-body physics, we should also illustrate if NEW tools -e.g., classical shadow- essentially described by respons theory. Absence of such might weaken our impact. }
+\WD{(Not only we need to add refs on GNR / LR theory in conventional many-body physics, but also illustrate if NEW tools -e.g., classical shadow- essentially described by respons theory. Absence of such might weaken our impact.) }
 
 \subsection[2_b]{Quantum probe: open quantum system-based learning and algebraic structure}
 % This should be a secton introducing/reviewing the QNS-based learning theory: start from probe-Matter coupling to obtained the probe's response to the perturbation.
 % with a few steps, obtained the nested commutator / anticommutator structure as explained in the DISCO;s paper.
 
-\WD{I need further explanition of $M_p(t)$. There are special subtlety that hard to figure out}
+The probe-based learning frameworks adopt a perspective fundamentally distinct from system-based response theory, thereof, a quantum probe, or several entangle units as an ensemble, to the matter and infers properties of the matter from the reduced dynamics of the probe.
+The probe thus acts as a quantum sensor, and learning is performed by observing probe observables rather than system responses. 
+Probe-based learning is also known as quantum noise spectroscopy (QNS) in characterization of quantum devices through estimating correlated (aka non-Markovian) noise spectra.
 
-Quantum noise spectroscopy (QNS) and related probe-based learning frameworks adopt a perspective fundamentally distinct from classical response theory. In response theory, one perturbs the matter system with a classical field and measures system observables, leading to causal response functions built exclusively from nested commutators. In contrast, QNS couples an auxiliary quantum probe to the matter and infers properties of the matter from the reduced dynamics of the probe. The probe thus acts as a quantum sensor, and learning is performed by observing probe observables rather than system responses.
+The essential distinction is algebraic. Classical, system-based response theory is restricted to fully retarded nested commutators, whereas probe-based learning accesses a larger family of operator orderings arising from the open-system evolution of the probe.
 
-The essential distinction is algebraic. Classical response theory is restricted to fully retarded nested commutators, whereas probe-based learning accesses a larger family of operator orderings arising from the open-system evolution of the probe.
-
-
-We consider a probe ensemble \(P\) (\WD{say, it is a $|P|$-qubit system}) coupled to a matter system \(M\). The total Hamiltonian is written as
+We consider a well-controlled probe ensemble \(P\) (\WD{say, it is a $|P|$-qubit system}) coupled to a matter system \(M\). The total Hamiltonian is written as
 \begin{equation}
-H(t) = H_P + H_M + H_{PM}(t),
+H(t) = H_P(t) + H_M + H_{PM}(t),
 \end{equation}
-with interaction
+with an effective interaction 
 \begin{equation}
-H_I(t) = \sum_{p\in {P}} h_p(t)\otimes M_p(t),
+H_I(t) = \sum_{p\in {P}} h_p(t)\otimes M_p(t)
 \end{equation}
-where \(h_p(t)\) are controlled probe operators (including all unitaries actively applied on probe) and \(M_p(t)\) are Heisenberg-picture matter operators. The $M_p(t)$ represent the operator on $M$ (or its subsystem) when the coupling involves subsystem $p$ in $P$.
+w.r.t. the rotation of $H_P(t)+H_M$ , where \(h_p(t)\) are controlled probe operators (including all unitaries actively applied on probe) and \(M_p(t)\) are Heisenberg-picture matter operators. 
+The $M_p(t)$ represent the operator on $M$ (or its subsystem) when the coupling involves subsystem $p$ in $P$. 
+Notice that in most Hamiltonian-level open quantum system modeling, for $p\neq p'$, one has orthogonal $P$-operators as $\Tr_P[h_p(t),h_{p'}(t)]\equiv0$ , while $\Tr_M[M_p(t),M_{p'}(t)]\neq0$. 
+One example is each $p\in P$ couples to an collective environment $M$, in which case all $M_p$ are equivalent.
 The initial state is assumed to be factorized,
 \begin{equation}
 \rho(0)=\rho_P\otimes\rho_M .
 \end{equation}
-All experimentally accessible information about the matter enters through probe observables measured at a final time \(T\). After tracing out the matter degrees of freedom, the probe undergoes open quantum system dynamics governed by multi-time correlation functions of the operators \(M_p(t)\).
+All experimentally accessible information about the matter enters through probe observables measured at a final time \(T\). 
+After tracing out the $M$ degrees of freedom, the probe undergoes open quantum system dynamics governed by multi-time correlation functions of the operators \(M_p(t)\).
 
 
-Perturbative expansions of the reduced probe dynamics generate bath operator strings of arbitrary time orderings,
+Perturbative expansions of the reduced probe dynamics generate $M$ operator strings of multiple time orderings allowed,
 \begin{equation}
 M_{p_{\pi(1)}}(t_{\pi(1)})\cdots M_{p_{\pi(k)}}(t_{\pi(k)}),
 \end{equation}
-where the permutations \(\pi\) arise from the forward--backward structure of the probe’s reduced evolution. A central result of the DISCO framework is that all such operator strings can be systematically rewritten in terms of a universal basis of nested commutator and anti-commutator structures.
+where the permutations \(\pi\) arise from the forward--backward structure of the probe’s reduced evolution. 
+A central result of the DISCO~\cite{} framework by one of us is that all such operator strings can be compactly expressed in terms of a universal basis of nested commutator and anti-commutator structures.
 
 
-\textit{Nested braketors: general-order algebraic structure} Define a binary bracket indexed by \(\mu\in\{0,1\}\),
+\textit{Nested braketors: general-order algebraic structure}. Define a binary bracket indexed by \(\mu\in\{0,1\}\),
 \begin{equation}
-[X,Y]_\mu := XY + (-1)^{\mu}YX ,
+\llbracket X,Y \rrbracket_\mu := XY + (-1)^{\mu}YX ,
 \end{equation}
-so that \(\mu=1\) corresponds to the commutator and \(\mu=0\) to the anti-commutator.
-
+so that \(\mu=1\) corresponds to the commutator and \(\mu=0\) to the anti-commutator. 
 For \(k\ge 2\), the \((k-1)\)-level nested bracket (or ``braketor'') correlator is defined as
 \begin{equation}
 \mathcal{M}^{\vec{\mu}}_{\vec{p}}(t_1,\ldots,t_k)
@@ -254,23 +259,66 @@ For \(k\ge 2\), the \((k-1)\)-level nested bracket (or ``braketor'') correlator 
 \frac{1}{2^{k-1}}
 \,\widehat{P}_{{\vec{p}}}
 \Big(
-[\cdots[[M_{p_1}(t_1),M_{p_2}(t_2)]_{\mu_1},
-M_{p_3}(t_3)]_{\mu_2}\cdots,
-M_{p_k}(t_k)]_{\mu_{k-1}}
+\llbracket\cdots \llbracket M_{p_1}(t_1),M_{p_2}(t_2)\rrbracket]_{\mu_1},
+M_{p_3}(t_3)\rrbracket_{\mu_2}\cdots,
+M_{p_k}(t_k)\rrbracket_{\mu_{k-1}}
 \Big),
+\label{eq:probe_correlator}
 \end{equation}
 where \(\vec{\mu}=(\mu_1,\ldots,\mu_{k-1})\in\{0,1\}^{k-1}\) and $\widehat{P}_{{\vec{p}}}$ is an ordering operator ensuring consistent labeling of the operator indices \((p_1,\ldots,p_k)\).
 
 These braketors form a complete operator basis: any admissible \(k\)-point bath operator string appearing in the probe’s reduced dynamics can be expressed as a linear combination of \(\mathcal{M}^{\vec{\mu}}_{\vec{p}}(t_1,\ldots,t_k)\).
 
-\subsection{Algebraic distinction from response theory}
 
-From this perspective, the distinction between response theory and probe-based learning becomes precise. Classical response theory accesses only the fully retarded sector of this algebra, corresponding to \(\mu_1=\cdots=\mu_{k-1}=1\), yielding nested commutators ordered by causality. Probe-based learning, by contrast, accesses linear combinations spanning the full \(\vec{\mu}\in\{0,1\}^{k-1}\) space, including anti-commutator and mixed sectors that encode fluctuations, noise, and higher-order correlations.
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+ & Learnable correlators & $\#$ of combinations & Linear term \\
+\hline
+\multirow{2}{*}{
+\begin{tabular}{c}
+\textbf{System-based} \\
+(closed system)
+\end{tabular}}&
+\multirow{2}{*}{$
+\mathcal{M}^{\vec{0}}(t_{[k]}) \sim [\![\![ M_{m_1}(t_1), M_{m_2}(t_2) ], \ldots , M_{m_k}(t_k)] $}
+&\multirow{2}{*}{$1$} & $\big[ M_{m_1}(t_1),\, M_{m_2}(t_2) \big]$
+\\ &  & & \\
+\hline
+\multirow{2}{*}{
+\begin{tabular}{c}
+\textbf{Probe-based} \\
+(open system)
+\end{tabular}} &
+\multirow{2}{*}{$ \mathcal{M}^{\vec{\mu}}(t_{[k]}) \sim \llbracket\cdots \llbracket M_{p_1}(t_1),M_{p_2}(t_2)\rrbracket_{\mu_1},\cdots, M_{p_k}(t_k)\rrbracket_{\mu_{k-1}} $}
+& \multirow{2}{*}{$2^{k}$} &
+$\big[ M_{m_1}(t_1),\, M_{m_2}(t_2) \big]$
+\\ & & & 
+$\{ M_{m_1}(t_1),\, M_{m_2}(t_2) \}$ \\
+\hline
+\end{tabular}
+\caption{Comparison between system-based (closed-system) and probe-based (open-system) learning of multi-time correlators.
+The probe-based approach enlarges the algebra of learnable correlators by accessing both commutator and anti-commutator structures.
+The expressions of correlators are adpated from Eq.~\ref{eq:response_correlator} and Eq.~\ref{eq:probe_correlator} for comparison; where subscription $m$ indexes $M$-subsystem.  
+The linear term in system-based response theory corresponds to leading non-linear ($k=2$) term in probe-based theory (as $M_{m_1}(t_1)$ there is not measurement basis). 
+}
+\label{tab:probe_vs_system_correlators}
+\end{table}
 
-Thus, QNS-based learning is not an extension of response theory but an open-quantum-system framework whose observables encode a strictly larger and algebraically richer class of multi-time correlators.
+\subsection{Algebraic distinction from system-based theory}
+
+From this perspective, the distinction between system-based response theory and probe-based theory becomes precise. 
+Classical system-based response theory accesses only the fully retarded sector of this algebra, corresponding to \(\mu_1=\cdots=\mu_{k-1}=1\), yielding nested commutators ordered by causality. 
+Probe-based learning, by contrast, accesses linear combinations spanning the full \(\vec{\mu}\in\{0,1\}^{k-1}\) space. 
+We will argue that these include anti-commutator and mixed sectors that encode fluctuations, noise, and higher-order correlations. 
+Comparison between two schemes are in Table.~\ref{tab:probe_vs_system_correlators}.
+
+Thus, probe-based learning is not an extension of response theory but an open-quantum-system framework whose observables encode a strictly larger and algebraically richer class of multi-time correlators.
 
 \WD{thought: Why quantum probe has advantage? I think it is because the tempararal correlation history of $M$ can be registered into $P$. The measurement of $P$ at finaly time is determined by the whole history of $M$, a reminiscent of non-Markovianity. 
 Due to the presence of $P$, $M$'s dynamics/information at different times can interfere and incur observable outcomes at later time on $P$.  This is a kind of harnessing quantum non-Markovianity as a resource to resort stronger power.}
+
 
 
 \section[3]{Quantum probe: learning decoherence beyond response theory}
