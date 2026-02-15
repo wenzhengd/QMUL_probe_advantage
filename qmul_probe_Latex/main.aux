@@ -2,10 +2,13 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
 \global\let\oldnewlabel\newlabel
 \gdef\newlabel#1#2{\newlabelxx{#1}#2}
 \gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
 \AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
 \let\newlabel\oldnewlabel
 \fi}
 \fi}
@@ -24,80 +27,82 @@
 \newlabel{eq:response_correlator}{{10}{3}{}{equation.2.10}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {B}Quantum probe: open quantum system-based learning and algebraic structure}{3}{section*.6}\protected@file@percent }
 \newlabel{eq:probe_correlator}{{16}{4}{}{equation.2.16}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Comparison between system-based (closed-system) and probe-based (open-system) learning of multi-time correlators. The probe-based approach enlarges the algebra of learnable correlators by accessing both commutator and anti-commutator structures. The expressions of correlators are adpated from Eq.\nobreakspace  {}\ref {eq:response_correlator} and Eq.\nobreakspace  {}\ref {eq:probe_correlator} for comparison; where subscription $m$ indexes $M$-subsystem. The linear term in system-based response theory corresponds to leading non-linear ($k=2$) term in probe-based theory (as $M_{m_1}(t_1)$ therein is not measurement observable). }}{4}{table.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Comparison between system-based (closed-system) and probe-based (open-system) learning of multi-time correlators. The probe-based approach enlarges the algebra of learnable correlators by accessing both commutator and anti-commutator structures. The expressions of correlators are adpated from Eq.\nobreakspace  {}\ref  {eq:response_correlator} and Eq.\nobreakspace  {}\ref  {eq:probe_correlator} for comparison; where subscription $m$ indexes $M$-subsystem. The linear term in system-based response theory corresponds to leading non-linear ($k=2$) term in probe-based theory (as $M_{m_1}(t_1)$ therein is not measurement observable). }}{4}{table.1}\protected@file@percent }
 \newlabel{tab:probe_vs_system_correlators}{{I}{4}{Comparison between system-based (closed-system) and probe-based (open-system) learning of multi-time correlators. The probe-based approach enlarges the algebra of learnable correlators by accessing both commutator and anti-commutator structures. The expressions of correlators are adpated from Eq.~\ref {eq:response_correlator} and Eq.~\ref {eq:probe_correlator} for comparison; where subscription $m$ indexes $M$-subsystem. The linear term in system-based response theory corresponds to leading non-linear ($k=2$) term in probe-based theory (as $M_{m_1}(t_1)$ therein is not measurement observable)}{table.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {C}Algebraic distinction from system-based theory}{4}{section*.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {III}Quantum probe: learning decoherence beyond response theory}{4}{section*.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Quantum Probe: learning non-equilibriant Gaussian many-body systems}{5}{section*.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Cartoon schematic of two schemes of learning many-body systems. (a) System-based response theory, where perturbations are applied and responses are collected directly from the target matter system ($M$). (b) Quantum probe-based theory, where controllable quamtum probes ($P$) are coupled to $M$ and information of $M$ is indirectly from readout of $P$. The learnability of probe-based theory to reconstruct $M$'s correlators are exponentially more than system-based theory --- there are $2^{k-1}$ reconstrucable $k$-point correlators. }}{5}{figure.1}\protected@file@percent }
+\newlabel{fig:fig_1_demo}{{1}{5}{Cartoon schematic of two schemes of learning many-body systems. (a) System-based response theory, where perturbations are applied and responses are collected directly from the target matter system ($M$). (b) Quantum probe-based theory, where controllable quamtum probes ($P$) are coupled to $M$ and information of $M$ is indirectly from readout of $P$. The learnability of probe-based theory to reconstruct $M$'s correlators are exponentially more than system-based theory --- there are $2^{k-1}$ reconstrucable $k$-point correlators}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Quantum Probe: learning non-equilibriant Gaussian many-body systems}{6}{section*.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{\numberline {a}Equilibrium caveat (FDT).}{6}{section*.10}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {A}Learning occupation number of Bosonic systems}{6}{section*.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {B}Learning entanglement entropy for non-interacting systems}{6}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Learning entanglement entropy for non-interacting systems}{7}{section*.12}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Entanglement entropy reconstruction for free bosons}{7}{section*.13}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{\numberline {a}Covariance matrix from anti-commutators.}{7}{section*.14}\protected@file@percent }
 \newlabel{eq:boson_cov_def}{{32}{7}{}{equation.4.32}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {b}Symplectic spectrum.}{7}{section*.15}\protected@file@percent }
 \newlabel{eq:symplectic_eigs}{{34}{7}{}{equation.4.34}{}}
-\@writefile{toc}{\contentsline {paragraph}{\numberline {c}Entropy formula.}{7}{section*.16}\protected@file@percent }
-\newlabel{eq:boson_entropy}{{35}{7}{}{equation.4.35}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Entanglement entropy reconstruction for free fermions: bilinear probes and restored probe advantage}{7}{section*.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {a}Setup and entropy formula.}{7}{section*.18}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {b}Failure of linear fermionic probes.}{7}{section*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {c}Entropy formula.}{8}{section*.16}\protected@file@percent }
+\newlabel{eq:boson_entropy}{{35}{8}{}{equation.4.35}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Entanglement entropy reconstruction for free fermions: bilinear probes and restored probe advantage}{8}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {a}Setup and entropy formula.}{8}{section*.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {b}Failure of linear fermionic probes.}{8}{section*.19}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{\numberline {c}Bilinear fermionic observables.}{8}{section*.20}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{\numberline {d}Noise correlator and state dependence.}{8}{section*.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {e}Probe-induced decoherence and access to $\mathcal  {M}^+$.}{8}{section*.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {f}Why response alone is insufficient.}{8}{section*.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {g}Restored probe advantage.}{8}{section*.24}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {V}Quantum Probe: learning entanglement entropy of interacting system}{8}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {e}Probe-induced decoherence and access to $\mathcal  {M}^+$.}{9}{section*.22}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {f}Why response alone is insufficient.}{9}{section*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {g}Restored probe advantage.}{9}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {V}Quantum Probe: learning entanglement entropy of interacting system}{9}{section*.25}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {A}Entropy expansion around a Gaussian reference}{9}{section*.26}\protected@file@percent }
 \newlabel{eq:rho_expand}{{45}{9}{}{equation.5.45}{}}
 \newlabel{eq:K_G_def}{{46}{9}{}{equation.5.46}{}}
 \newlabel{eq:log_frechet}{{47}{9}{}{equation.5.47}{}}
 \newlabel{eq:ent_first_law}{{48}{9}{}{equation.5.48}{}}
-\newlabel{eq:deltaS2_resolvent}{{49}{9}{}{equation.5.49}{}}
-\newlabel{eq:BKM_def}{{50}{9}{}{equation.5.50}{}}
-\newlabel{eq:deltaS2_BKM}{{51}{9}{}{equation.5.51}{}}
-\newlabel{eq:deltaS2_eigbasis}{{52}{9}{}{equation.5.52}{}}
-\@writefile{toc}{\contentsline {paragraph}{\numberline {a}Why the first-order term can be made to vanish.}{9}{section*.27}\protected@file@percent }
-\newlabel{eq:first_order_zero}{{53}{9}{}{equation.5.53}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B}Gaussian normal ordering, connected four-point cumulants, and modular flow}{9}{section*.28}\protected@file@percent }
+\newlabel{eq:deltaS2_resolvent}{{49}{10}{}{equation.5.49}{}}
+\newlabel{eq:BKM_def}{{50}{10}{}{equation.5.50}{}}
+\newlabel{eq:deltaS2_BKM}{{51}{10}{}{equation.5.51}{}}
+\newlabel{eq:deltaS2_eigbasis}{{52}{10}{}{equation.5.52}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {a}Why the first-order term can be made to vanish.}{10}{section*.27}\protected@file@percent }
+\newlabel{eq:first_order_zero}{{53}{10}{}{equation.5.53}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Gaussian normal ordering, connected four-point cumulants, and modular flow}{10}{section*.28}\protected@file@percent }
 \newlabel{eq:normal_order_2}{{54}{10}{}{equation.5.54}{}}
 \newlabel{eq:kappa_def}{{55}{10}{}{equation.5.55}{}}
 \newlabel{eq:deltaK_quartic}{{56}{10}{}{equation.5.56}{}}
 \newlabel{eq:duhamel_delta_rho}{{57}{10}{}{equation.5.57}{}}
-\newlabel{eq:modular_flow_def}{{58}{10}{}{equation.5.58}{}}
-\newlabel{eq:deltaS2_g_kernel}{{59}{10}{}{equation.5.59}{}}
-\newlabel{eq:K_kernel_def}{{60}{10}{}{equation.5.60}{}}
-\newlabel{eq:kappa_g_linear}{{61}{10}{}{equation.5.61}{}}
-\newlabel{eq:deltaS2_kappa_kernel}{{62}{10}{}{equation.5.62}{}}
-\@writefile{toc}{\contentsline {paragraph}{\numberline {a}Operational meaning.}{10}{section*.29}\protected@file@percent }
+\newlabel{eq:modular_flow_def}{{58}{11}{}{equation.5.58}{}}
+\newlabel{eq:deltaS2_g_kernel}{{59}{11}{}{equation.5.59}{}}
+\newlabel{eq:K_kernel_def}{{60}{11}{}{equation.5.60}{}}
+\newlabel{eq:kappa_g_linear}{{61}{11}{}{equation.5.61}{}}
+\newlabel{eq:deltaS2_kappa_kernel}{{62}{11}{}{equation.5.62}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {a}Operational meaning.}{11}{section*.29}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {C}Example I: weakly interacting bosons ($\phi ^4$)}{11}{section*.30}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Model and Gaussian reference}{11}{section*.31}\protected@file@percent }
 \newlabel{eq:phi4_model}{{63}{11}{}{equation.5.63}{}}
 \newlabel{eq:phi4_gaussian_match}{{64}{11}{}{equation.5.64}{}}
 \newlabel{eq:phi4_entropy_expand}{{65}{11}{}{equation.5.65}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Connected four-point data as the leading interacting signature}{11}{section*.32}\protected@file@percent }
-\newlabel{eq:phi4_kappa_def}{{66}{11}{}{equation.5.66}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Entropy correction as a quadratic functional of $\kappa $}{11}{section*.33}\protected@file@percent }
-\newlabel{eq:phi4_deltaK}{{67}{11}{}{equation.5.67}{}}
-\newlabel{eq:phi4_deltaS2_g}{{68}{11}{}{equation.5.68}{}}
-\newlabel{eq:phi4_deltaS2_kappa}{{69}{11}{}{equation.5.69}{}}
-\@writefile{toc}{\contentsline {paragraph}{\numberline {a}Probe-accessible content.}{11}{section*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Connected four-point data as the leading interacting signature}{12}{section*.32}\protected@file@percent }
+\newlabel{eq:phi4_kappa_def}{{66}{12}{}{equation.5.66}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Entropy correction as a quadratic functional of $\kappa $}{12}{section*.33}\protected@file@percent }
+\newlabel{eq:phi4_deltaK}{{67}{12}{}{equation.5.67}{}}
+\newlabel{eq:phi4_deltaS2_g}{{68}{12}{}{equation.5.68}{}}
+\newlabel{eq:phi4_deltaS2_kappa}{{69}{12}{}{equation.5.69}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {a}Probe-accessible content.}{12}{section*.34}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {D}Example II: weak-$U$ Hubbard fermions}{12}{section*.35}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Model and quasi-free Gaussian reference}{12}{section*.36}\protected@file@percent }
 \newlabel{eq:hubbard_model}{{70}{12}{}{equation.5.70}{}}
 \newlabel{eq:fermion_entropy_free}{{71}{12}{}{equation.5.71}{}}
 \newlabel{eq:hubbard_gaussian_match}{{72}{12}{}{equation.5.72}{}}
 \newlabel{eq:fermion_KG_quad}{{73}{12}{}{equation.5.73}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Non-Gaussian datum: connected four-fermion cumulants}{12}{section*.37}\protected@file@percent }
-\newlabel{eq:fermion_kappa_def}{{74}{12}{}{equation.5.74}{}}
-\newlabel{eq:dens_dens_connected}{{75}{12}{}{equation.5.75}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Quartic modular correction and entropy correction}{12}{section*.38}\protected@file@percent }
-\newlabel{eq:fermion_deltaK_quartic}{{76}{12}{}{equation.5.76}{}}
-\newlabel{eq:fermion_deltaS2_g}{{77}{12}{}{equation.5.77}{}}
 \bibdata{mainNotes}
 \bibstyle{apsrev4-2}
 \citation{REVTEX42Control}
 \citation{apsrev42Control}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Non-Gaussian datum: connected four-fermion cumulants}{13}{section*.37}\protected@file@percent }
+\newlabel{eq:fermion_kappa_def}{{74}{13}{}{equation.5.74}{}}
+\newlabel{eq:dens_dens_connected}{{75}{13}{}{equation.5.75}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Quartic modular correction and entropy correction}{13}{section*.38}\protected@file@percent }
+\newlabel{eq:fermion_deltaK_quartic}{{76}{13}{}{equation.5.76}{}}
+\newlabel{eq:fermion_deltaS2_g}{{77}{13}{}{equation.5.77}{}}
 \newlabel{eq:fermion_Kkernel}{{78}{13}{}{equation.5.78}{}}
 \newlabel{eq:fermion_kappa_g}{{79}{13}{}{equation.5.79}{}}
 \newlabel{eq:fermion_deltaS2_kappa}{{80}{13}{}{equation.5.80}{}}
