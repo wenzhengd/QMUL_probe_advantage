@@ -484,6 +484,7 @@ V_{ij} \equiv \frac{1}{2}\langle\{\Delta \hat{R}_i,\Delta \hat{R}_j\}\rangle,
 \end{equation}
 Thus, equal-time anti-commutator correlators of quadratures (or any equivalent complete linear combination) 
 $\mathcal{M}^{+}=\langle \{\Delta \hat{R}(t), \Delta \hat{R}(t')\} \rangle|_{t\rightarrow t'}$ determine $V$.
+[\WD{here anticommutator's involvment is clear.}]
 
 Let $A$ be a subsystem consisting of $N_A$ modes.
 Denote by $V_A$ and $\Omega_A$ the restrictions of $V$ and $\Omega$ to those modes.
@@ -732,7 +733,7 @@ K_{A,G}+\delta K_A,
 +O(R^6).
 \label{eq:deltaK_quartic}
 \end{equation}
-The induced linear change of the state is given by the \WD{Duhamel formula}
+(\AGENT{the $g$ is NOT defined!!!!}) The induced linear change of the state is given by the \WD{Duhamel formula}
 \begin{equation}
 \delta\rho_A
 =
@@ -769,7 +770,8 @@ with the \emph{Gaussian modular kernel}
 \Big\rangle_G.
 \label{eq:K_kernel_def}
 \end{equation}
-
+(\WD{why the Gaussian modular flow ``O'' is not used?})
+\AGENT{the anticommutator not appear here at all. Why?}
 Finally, the measurable connected cumulant $\kappa$ is linearly related to $g$ at weak non-Gaussianity:
 \begin{equation}
 \kappa_{ijkl}
@@ -815,7 +817,7 @@ V=\int d^dx\;\frac{1}{4!}\phi^4(x),
 \label{eq:phi4_model}
 \end{equation}
 with $[\phi(x),\pi(y)]=i\hbar\delta(x-y)$. Fix a region $A$ and denote the reduced state by
-$\rho_A=\Tr_{\bar A}\rho$. For $\lambda\neq 0$, $\rho_A$ is non-Gaussian.
+$\rho_A=\Tr_{\bar A}[\rho]$. For $\lambda\neq 0$, $\rho_A$ is non-Gaussian.
 
 Choose $\rho_{A,G}$ as the maximum-entropy Gaussian state matching the exact one- and two-point data of
 $(\phi,\pi)$ on $A$:
@@ -900,7 +902,8 @@ H_0= -t\sum_{\langle ij\rangle,\sigma}(c_{i\sigma}^\dagger c_{j\sigma}+\mathrm{h
 V=\sum_i n_{i\uparrow}n_{i\downarrow},
 \label{eq:hubbard_model}
 \end{equation}
-with $n_{i\sigma}=c_{i\sigma}^\dagger c_{i\sigma}$. Fix a subsystem $A$ (set of sites). For $U=0$ the reduced state
+with $n_{i\sigma}=c_{i\sigma}^\dagger c_{i\sigma}$. 
+(\AGENT{following is redundant as free-fermions are studied already.}) Fix a subsystem $A$ (set of sites). For $U=0$ the reduced state
 $\rho_A$ is quasi-free and its entropy is determined by the correlation matrix
 \begin{equation}
 (C_A)_{i\sigma,j\sigma'}=\langle c_{i\sigma}^\dagger c_{j\sigma'}\rangle,
@@ -909,7 +912,6 @@ S(\rho_A)=-\sum_\alpha\Big[\lambda_\alpha\ln\lambda_\alpha+(1-\lambda_\alpha)\ln
 \quad \{\lambda_\alpha\}=\mathrm{eig}(C_A).
 \label{eq:fermion_entropy_free}
 \end{equation}
-
 For weak $U\neq 0$, define $\rho_{A,G}$ to be the maximum-entropy quasi-free state matching the exact two-point
 function on $A$:
 \begin{equation}
@@ -1021,6 +1023,8 @@ entering \eqref{eq:fermion_deltaS2_kappa}. Out of equilibrium, system-only respo
 connected four-point tensors, whereas probe-based protocols can access them through higher-order correlators in the
 reduced probe dynamics.
 
+
+\WD{Can also comment that other entanglement measures, e.g., R\'enyi entropy can also be constructed in a similar way by expanding around Gaussian reference states.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % End of Section V
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
