@@ -87,7 +87,7 @@
 \begin{abstract}
 Understanding which physical properties of a quantum many-body system are operationally accessible is a foundational question underlying spectroscopy, thermodynamics, and quantum information science.
 Conventional response theory, a cornerstone of many-body physics, perturbs and measures the system itself, yielding susceptibilities constructed exclusively from causally ordered nested commutators.
-Here we establish, at the operator level and from first principles, that when an auxiliary quantum probe is coherently coupled to a target system and subsequently measured, its reduced dynamics encodes a strictly larger class of information about the system. 
+Here we establish, at the operator level and from first principles, that when auxiliary quantum probe(s) is coherently coupled to a target system and subsequently measured, its reduced dynamics encodes a strictly larger class of information about the system. 
 Owing to probe--system entanglement and the resulting non-Markovian backaction, probe observables access multi-time anti-commutator correlators and mixed operator orderings that characterize fluctuations, non-equilibriant behavior, and irreversibility---quantities that are not, in general, determined by response functions alone. We present explicit examples showing how small, controllable quantum probes can efficiently reconstruct physical properties of many-body systems that are otherwise inaccessible or operationally impractical using system-only measurements. 
 Our results demonstrate that quantum probes do not merely enhance measurement sensitivity within a closed-system framework, but fundamentally enlarge the algebra of operationally measurable observables, thereby establishing a precise and general notion of quantum probe advantage in many-body physics.
 \end{abstract}
@@ -282,7 +282,7 @@ These braketors form a complete operator basis: any admissible \(k\)-point bath 
 (closed system)
 \end{tabular}}&
 \multirow{2}{*}{$
-\mathcal{M}^{\vec{0}}(t_{[k]}) \sim [\![\![ M_{m_1}(t_1), M_{m_2}(t_2) ], \ldots , M_{m_k}(t_k)] $}
+\mathcal{M}^{\vec{0}}(t_{[k]}) \sim [\cdots[ M_{m_1}(t_1), M_{m_2}(t_2) ], \ldots , M_{m_k}(t_k)] $}
 &\multirow{2}{*}{$1$} & $\big[ M_{m_1}(t_1),\, M_{m_2}(t_2) \big]$
 \\ &  & & \\
 \hline
@@ -291,7 +291,7 @@ These braketors form a complete operator basis: any admissible \(k\)-point bath 
 \textbf{Probe-based} \\
 (open system)
 \end{tabular}} &
-\multirow{2}{*}{$ \mathcal{M}^{\vec{\mu}}(t_{[k]}) \sim \llbracket\cdots \llbracket M_{p_1}(t_1),M_{p_2}(t_2)\rrbracket_{\mu_1},\cdots, M_{p_k}(t_k)\rrbracket_{\mu_{k-1}} $}
+\multirow{2}{*}{$ \mathcal{M}^{\vec{\mu}}(t_{[k]}) \sim \llbracket\cdots \llbracket M_{p_1}(t_1),M_{p_2}(t_2)\rrbracket_{\mu_1},\cdots, M_{p_k}(t_k)\rrbracket_{\mu_{k-1}}$ ~ $\vec{\mu}\in\{0,1\}^{k-1}$}
 & \multirow{2}{*}{$2^{k}$} &
 $\big[ M_{m_1}(t_1),\, M_{m_2}(t_2) \big]$
 \\ & & & 
@@ -301,7 +301,7 @@ $\{ M_{m_1}(t_1),\, M_{m_2}(t_2) \}$ \\
 \caption{Comparison between system-based (closed-system) and probe-based (open-system) learning of multi-time correlators.
 The probe-based approach enlarges the algebra of learnable correlators by accessing both commutator and anti-commutator structures.
 The expressions of correlators are adpated from Eq.~\ref{eq:response_correlator} and Eq.~\ref{eq:probe_correlator} for comparison; where subscription $m$ indexes $M$-subsystem.  
-The linear term in system-based response theory corresponds to leading non-linear ($k=2$) term in probe-based theory (as $M_{m_1}(t_1)$ there is not measurement basis). 
+The linear term in system-based response theory corresponds to leading non-linear ($k=2$) term in probe-based theory (as $M_{m_1}(t_1)$ therein is not measurement observable). 
 }
 \label{tab:probe_vs_system_correlators}
 \end{table}
@@ -316,8 +316,8 @@ Comparison between two schemes are in Table.~\ref{tab:probe_vs_system_correlator
 
 Thus, probe-based learning is not an extension of response theory but an open-quantum-system framework whose observables encode a strictly larger and algebraically richer class of multi-time correlators.
 
-\WD{thought: Why quantum probe has advantage? I think it is because the tempararal correlation history of $M$ can be registered into $P$. The measurement of $P$ at finaly time is determined by the whole history of $M$, a reminiscent of non-Markovianity. 
-Due to the presence of $P$, $M$'s dynamics/information at different times can interfere and incur observable outcomes at later time on $P$.  This is a kind of harnessing quantum non-Markovianity as a resource to resort stronger power.}
+Beside the above algebraic distinction, it is crucial to clarify the physical mechanism lies under the quantum probe that grants its advantage, in the language of open quantum systems.
+We emphasize that the tempararal correlation history of $M$, through $P-M$ enatanglement, can flow into $P$, a reminiscent of quantum non-Markovianity. 
 
 
 
@@ -390,7 +390,7 @@ In this sense, quantum-probe-based learning goes beyond response theory not by i
 \WD{Some thoughts: (1) fluctuation(decoherence) is absent in closed-system dynamics hence undetectable, while quatum-probe formalism is open-quantum system-based. (2) the fluctuation of $M$ is essentially non-Markovian and is detectable in $P$ after registery.   }
 
 
-\section[4]{Gaussian quantum probe: learning many physical properties beyond linear response theory}
+\section[4]{Quantum Probe: learning non-equilibriant Gaussian many-body systems}
 % Switch to talk about probe advantage for many-body system. For the Gaussian case, the anti-commutator can be inferred from commutator (math express) through FDT if the system is thermal equilibrium(?).
 % While in general, DFT does not appiled and a plethoral of interesting physical properpites remain inaccessible through response theory.
 We now move from few-level probes sensing an abstract ``bath operator'' to the regime where the matter itself is an extended many-body system. (\AGENT{language needs improvement })
@@ -599,12 +599,12 @@ Therefore, even for free fermions, probe-based measurements provide access to st
 
 
 
-\section[5]{Non-Gaussian probe: learning entanglement entropy of interacting system}
+\section[5]{Quantum Probe: learning entanglement entropy of interacting system}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In Sec.~IV-B we exploited Gaussianity: for free bosons/fermions the reduced state $\rho_A$ is Gaussian/quasi-free,
 hence $S(\rho_A)$ is an explicit functional of two-point data restricted to $A$.
-For genuinely interacting matter, $\rho_A$ is non-Gaussian and $S(\rho_A)=-\Tr(\rho_A\ln\rho_A)$ is a nonlinear
+For genuinely interacting matter, $\rho_A$ is non-Gaussian (\WD{subsystem or full system non-Gaussian?}) and $S(\rho_A)=-\Tr(\rho_A\ln\rho_A)$ is a nonlinear
 functional of $\rho_A$. Nevertheless, if the interacting reduced state is close (in a controlled sense) to a Gaussian
 reference $\rho_{A,G}$, one can develop a perturbative expansion of $S(\rho_A)$ whose  nontrivial corrections
 are governed by higher connected correlators, beginning at the four-point level. In this section we make this statement
@@ -616,7 +616,7 @@ two-point data on $A$, (ii) learn the connected four-point cumulants on $A$, and
 \subsection{Entropy expansion around a Gaussian reference}
 %------------------------------------------------------------------------------
 
-Let the reduced state on $A$ be written as
+Let the reduced state on $A$ (all is on  system $M$ and hence drop for briefty) be written as
 \begin{equation}
 \rho_A=\rho_{A,G}+\delta\rho_A,\qquad \Tr_A(\delta\rho_A)=0,
 \label{eq:rho_expand}
@@ -626,7 +626,7 @@ where $\rho_{A,G}$ is a Gaussian/quasi-free state on $A$ fixed by its one- and t
 K_{A,G}:=-\ln\rho_{A,G}
 \label{eq:K_G_def}
 \end{equation}
-is the corresponding Gaussian modular Hamiltonian.
+is the corresponding Gaussian modular Hamiltonian (\WD{realte to entanglement Hamiltonian?}).
 
 A rigorous expansion follows from the Fr\'echet derivative of the operator logarithm. For a full-rank density operator
 $\rho$ and a small perturbation $X$, one has
@@ -651,15 +651,11 @@ the first-order correction is the entanglement ``first law'',
 At second order, the apparently ``two'' quadratic contributions that arise from naively multiplying
 $\rho_{A,G}+\delta\rho_A$ by the series \eqref{eq:log_frechet} recombine into a single compact quadratic form:
 \begin{equation}
-\delta S_A^{(2)}
-=
--\frac12\int_{0}^{\infty}ds\;
-\Tr\!\left[
-\delta\rho_A\,(\rho_{A,G}+s)^{-1}\,\delta\rho_A\,(\rho_{A,G}+s)^{-1}
-\right].
+\delta S_A^{(2)}= -\frac12\int_{0}^{\infty}ds\;
+\Tr\!\left[ \delta\rho_A\,(\rho_{A,G}+s)^{-1}\,\delta\rho_A\,(\rho_{A,G}+s)^{-1}  \right].
 \label{eq:deltaS2_resolvent}
 \end{equation}
-Equivalently, introducing the Bogoliubov--Kubo--Mori (BKM) [\WD{research}] super-operator
+(\WD{CAUTION: I didn't manage to replicate same $\delta S^{(1,2)}_A$}!) Equivalently, introducing the Bogoliubov--Kubo--Mori (BKM) [\WD{research}] super-operator
 \begin{equation}
 \mathcal{J}_{\rho}^{-1}(X):=\int_{0}^{\infty}ds\,(\rho+s)^{-1}X(\rho+s)^{-1},
 \label{eq:BKM_def}
@@ -702,7 +698,7 @@ This is the controlled sense in which the leading \emph{interacting} correction 
 Let $R=(R_1,\dots,R_{2|A|})$ denote a complete set of canonical operators on $A$:
 for bosons one may take quadratures $R=(\hat x_1,\hat p_1,\dots)$, and for fermions one may take Majoranas
 (or equivalently $c^\dagger c$ bilinears for number-conserving states).
-Given $\rho_{A,G}$, define Gaussian (Wick) normal ordering $:\cdots:_G$ by subtracting all contractions computed
+Given $\rho_{A,G}$, define Gaussian (Wick) normal ordering $:\cdots:_G$ (\WD{cumulant representation: connected correlation functions // maybe change notation? }) by subtracting all contractions computed
 with the Gaussian two-point function. For instance,
 \begin{equation}
 :R_iR_j:_G:=R_iR_j-\langle R_iR_j\rangle_G,
@@ -736,7 +732,7 @@ K_{A,G}+\delta K_A,
 +O(R^6).
 \label{eq:deltaK_quartic}
 \end{equation}
-The induced linear change of the state is given by the Duhamel formula
+The induced linear change of the state is given by the \WD{Duhamel formula}
 \begin{equation}
 \delta\rho_A
 =
