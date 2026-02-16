@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1771160272 "main.aux" "main.bbl" "main" 1771160274
+["bibtex main"] 1771209658 "main.aux" "main.bbl" "main" 1771209660
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/revtex/apsrev4-2.bst" 1601932770 69609 e9dea59f0e753ccda3ddc8f5806d846d ""
-  "main.aux" 1771160274 11676 f6d1dc0c67ba13d945bd7c2e448307e7 "pdflatex"
-  "mainNotes.bib" 1771160274 104 4d8bb863c86f3d7b03a471e9d4707f34 "pdflatex"
+  "main.aux" 1771209660 12034 abf93765fdafa4463cb5654ee471bf80 "pdflatex"
+  "mainNotes.bib" 1771209660 104 4d8bb863c86f3d7b03a471e9d4707f34 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1771160272 "/Users/wenzheng/Desktop/QMUL_probe_advantage/qmul_probe_Latex/main.tex" "main.pdf" "main" 1771160274
-  "/Users/wenzheng/Desktop/QMUL_probe_advantage/qmul_probe_Latex/main.tex" 1771160269 55003 9cea4b695b8b84e64488827cddb07417 ""
+["pdflatex"] 1771209658 "/Users/wenzheng/Desktop/QMUL_probe_advantage/qmul_probe_Latex/main.tex" "main.pdf" "main" 1771209660
+  "/Users/wenzheng/Desktop/QMUL_probe_advantage/qmul_probe_Latex/main.tex" 1771209655 55268 524c7e1f996b70aefcacd81431d650cc ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -176,11 +176,12 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1650554396 2826439 9136e35249147cb906f59f440a104695 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "figs/fig_1_demo.png" 1771159608 425003 003816c9c2569cb75646ade8b88e3797 ""
-  "main.aux" 1771160274 11676 f6d1dc0c67ba13d945bd7c2e448307e7 "pdflatex"
-  "main.bbl" 1771160272 1982 35453d3875d823f0ec9445e740a573d9 "bibtex main"
-  "main.out" 1771160274 7814 aad66ab4e6e4ce8fc04459cf23e07251 "pdflatex"
-  "main.tex" 1771160269 55003 9cea4b695b8b84e64488827cddb07417 ""
+  "figs/fig_1_demo.pdf" 1771209522 406037 659d889a0e745df10dcad1b7676de6f1 ""
+  "figs/fig_2_probe_circuit.pdf" 1771209565 159343 971f5758fbad4719df222aca6c281306 ""
+  "main.aux" 1771209660 12034 abf93765fdafa4463cb5654ee471bf80 "pdflatex"
+  "main.bbl" 1771209658 1982 35453d3875d823f0ec9445e740a573d9 "bibtex main"
+  "main.out" 1771209660 7814 aad66ab4e6e4ce8fc04459cf23e07251 "pdflatex"
+  "main.tex" 1771209655 55268 524c7e1f996b70aefcacd81431d650cc ""
   (generated)
   "main.aux"
   "main.log"
